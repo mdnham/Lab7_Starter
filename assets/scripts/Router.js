@@ -82,9 +82,11 @@ export class Router {
     //3.
     if(statePopped == false && window.location.hash != hash)
     {
-      var u = new URL(window.location);
+      /*var u = new URL(window.location);
       var url = new URL('/', u);
-      history.pushState({'page': page}, '', new URL(hash, url));
+      history.pushState({'page': page}, '', new URL(hash, url));*/
+     
+     history.pushState({'page': page}, '', window.location.origin + window.location.pathname + hash);
     }
     
     //4.
